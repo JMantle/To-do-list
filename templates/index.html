@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list</title>
+</head>
+<body>
+    <h1>to do list</h1>
+    <hr>
+    <form action="/add" method="post">
+        <input type="text" name="content" placeholder="Enter the task">
+        <button type="submit">submit</button>
+    </form>
+    <hr>
+    <a href="/completed_tasks">Completed tasks</a>
+    <hr>
+    {% if tasks %}
+    <ul>
+        {% for task in tasks %}
+          <li>
+            {{ task['content'] }}
+            <a href="/edit/{{ task['id'] }}">Edit</a>
+            <form action="/complete/{{ task['id'] }}" method="POST" style="display: inline;">
+              <button type="submit">Complete</buttom>
+            </form>
+            <form action="/delete/{{ task['id'] }}/index" method="POST" style="display: inline;">
+              <button type="submit">DELETE</button>
+            </form>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>you have no uncompleted tasks</p>
+    {% endif %}
+</body>
+</html>
