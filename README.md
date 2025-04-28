@@ -1,9 +1,7 @@
 # To-do-list
 backend focused, to do list app with heavy focus on CRUD functionality rather than looks
 
-folder named "flask" is a virtual environment that I used to run it
-
-initdb.py was run to initialize database (and get rid of an old one)
+initdb.py is used to initialize database (and get rid of an old one)
 
 # Stack
 Python
